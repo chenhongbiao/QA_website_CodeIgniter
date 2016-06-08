@@ -55,5 +55,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$route['translate_uri_dashes'] = FALSE;
 
 $route['default_controller'] = 'questions';
+$route['questions/ask'] = 'ask';
 $route['questions/(:any)'] = 'questions/view/$1';
 $route['about'] = 'about';

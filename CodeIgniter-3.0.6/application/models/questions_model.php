@@ -20,4 +20,20 @@ class questions_model extends CI_Model {
         }
     }
 
+    public function add_question()
+{
+    $this->load->helper('url');
+
+    $label = url_title($this->input->post('title'), 'dash', TRUE);
+
+    $data = array(
+        'authorId' => 2,
+        'title' => $this->input->post('title'),
+        'label' => $label,
+        'content' => $this->input->post('content')
+     );
+
+     return $this->db->insert('questions', $data);
+}
+
 }
