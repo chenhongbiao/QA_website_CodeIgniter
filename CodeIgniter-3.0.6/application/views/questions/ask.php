@@ -5,16 +5,20 @@
 
     <?php echo validation_errors(); ?>
 
-    <?php echo form_open('ask'); ?>
+    <?php echo form_open('ask', 'class="pure-form pure-form-stacked"');  ?>
+
+    <fieldset>
 
     <label for="title">Title</label>
-    <input type="input" name="title" /><br/>
-
+    <input name="title" placeholder="Title" /><br/>
+  <!--use input name="xx" please, instead of id="xx", or CI can't work-->
     <label for="content">Content</label>
     <textarea name="content"></textarea><br/>
 
-    <input type="submit" name="submit" value="Ask Now!" />
+    <button type="submit" class="pure-button pure-button-primary">Ask Now!</button>
 
+     </fieldset>
 </form>
 
 </div>
+
