@@ -5,6 +5,7 @@ class Questions extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('questions_model');
+        $this->load->model('answers_model');
         $this->load->helper('url_helper');
     }
 
@@ -25,11 +26,15 @@ class Questions extends CI_Controller {
         {
             show_404();
         }
-        
-        $data['title'] = $data['questions_item']['title'];
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('questions/view', $data);
-        $this->load->view('templates/footer');
+        else
+        {
+            $data['answers_item'] = $this->answers_model->get_answers($data['questions_item']['id']);
+            $data['title'] = $data['questions_item']['title'];
+            
+            $this->load->view('templates/header', $data);
+            $this->load->view('questions/view', $data);
+            $this->load->view('templates/footer');
+        }
+
     }
 }
