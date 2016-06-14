@@ -21,7 +21,7 @@
 
     <div class="text-box pure-u-1-3">
         <div class="l-box">
-            <h1 class="text-box-head">Photos from around the world</h1>
+            <h1 class="text-box-head">People from around the world</h1>
             <h3>The person I miss</h3>
             <p>
                 Just by looking at her face, I would have a wonderful feeling of peace as if I were in a different world.

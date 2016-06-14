@@ -7,4 +7,12 @@
         return isset($_SESSION['user']);
     }
 
+    function is_logged() 
+    {
+        if (!logged_on())
+        {
+            header ("Location: signin");
+        }
+    }
+
 ?>
