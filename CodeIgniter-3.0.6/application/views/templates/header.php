@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->helper('url');
+require_once ("includes/session.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,15 +25,26 @@ $this->load->helper('url');
                 <li class="pure-menu-item pure-menu-selected"><a href="<?php echo site_url('questions'); ?>" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="<?php echo site_url('find'); ?>" class="pure-menu-link">Find</a></li>
                 <li class="pure-menu-item"><a href="<?php echo site_url('blog'); ?>" class="pure-menu-link">Blog</a></li>
+
                 <?php
-                    echo "<li class='pure-menu-item'><a href='";
-                    echo site_url('signin');
-                    echo "' class='pure-menu-link'>Sign in</a></li>";
 
-                    echo "<li class='pure-menu-item'><a href='";
-                    echo site_url('register');
-                    echo "' class='pure-menu-link'>Register</a></li>";
-
+                     if ( logged_on())
+                     {
+                         echo "<li class='pure-menu-item'><a href='";
+                         echo site_url('signout');
+                         echo "' class='pure-menu-link'>Sign out</a></li>";
+                     }
+                     else
+                     {
+                         echo "<li class='pure-menu-item'><a href='";
+                         echo site_url('signin');
+                         echo "' class='pure-menu-link'>Sign in</a></li>";
+                         
+                         echo "<li class='pure-menu-item'><a href='";
+                         echo site_url('register');
+                         echo "' class='pure-menu-link'>Register</a></li>";
+                     }
+                    
                  ?>
             </ul>
 

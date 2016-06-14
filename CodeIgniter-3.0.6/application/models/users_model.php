@@ -6,6 +6,12 @@ class users_model extends CI_Model {
         $this->load->database();
     }
 
+       public function get_user($username = FALSE, $password = FALSE)
+    {
+            $query = $this->db->get_where('users', array('username' => $username, 'password'=>$password));
+            return $query->row_array();            
+    }
+
     public function add_user()
 {
     $this->load->helper('url');
