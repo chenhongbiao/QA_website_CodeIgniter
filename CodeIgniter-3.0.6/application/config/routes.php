@@ -56,5 +56,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'questions';
 $route['questions/ask'] = 'ask';
+$route['questions/signin'] = 'signin';
 $route['questions/(:any)'] = 'questions/view/$1';
 $route['about'] = 'about';

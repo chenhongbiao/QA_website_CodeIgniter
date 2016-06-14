@@ -16,12 +16,13 @@ class Ask extends CI_Controller {
     $data['title'] = 'Ask a question';
 
     $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('label', 'Label', 'required');
     $this->form_validation->set_rules('content', 'Content', 'required');
 
     if ($this->form_validation->run() === FALSE)
     {
         $this->load->view('templates/header', $data);
-        $this->load->view('questions/ask');
+        $this->load->view('ask');
         $this->load->view('templates/footer');
 
     }

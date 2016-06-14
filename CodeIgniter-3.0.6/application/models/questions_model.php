@@ -4,6 +4,7 @@ class questions_model extends CI_Model {
     public function __construct()
     {
         $this->load->database();
+        $this->load->library('session');
     }
 
     public function get_questions($id = FALSE)
@@ -24,12 +25,10 @@ class questions_model extends CI_Model {
 {
     $this->load->helper('url');
 
-    $label = url_title($this->input->post('title'), 'dash', TRUE);
-
     $data = array(
-        'authorId' => 2,
+        'authorId' => $_SESSION['user']['id'],
         'title' => $this->input->post('title'),
-        'label' => $label,
+        'label' => $this->input->post('label'),
         'content' => $this->input->post('content')
      );
 
