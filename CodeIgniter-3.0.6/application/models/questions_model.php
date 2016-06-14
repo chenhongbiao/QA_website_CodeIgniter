@@ -36,4 +36,10 @@ class questions_model extends CI_Model {
      return $this->db->insert('questions', $data);
 }
 
+public function find_questions($label = FALSE)
+    {
+            $query = $this->db->get_where('questions', array('label' => $label));
+            return $query->result_array();            
+    }
+
 }
