@@ -74,3 +74,14 @@
         right: 0;
 	}
 
+
+a.ask-button{
+        background-color: #E13300;
+        color: white;
+        width: 60%;
+        font-size:150%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 10px;
+	}
+

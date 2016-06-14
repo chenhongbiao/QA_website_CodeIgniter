@@ -24,8 +24,14 @@ $this->load->helper('url');
                 <li class="pure-menu-item"><a href="<?php echo site_url('find'); ?>" class="pure-menu-link">Find</a></li>
                 <li class="pure-menu-item"><a href="<?php echo site_url('blog'); ?>" class="pure-menu-link">Blog</a></li>
                 <?php
-                    echo "<li class='pure-menu-item'><a href='/logon.php' class='pure-menu-link'>Sign in</a></li>";
-                    echo "<li class='pure-menu-item''><a href='/register.php'' class='pure-menu-link''>Register</a></li>";
+                    echo "<li class='pure-menu-item'><a href='";
+                    echo site_url('signin');
+                    echo "' class='pure-menu-link'>Sign in</a></li>";
+
+                    echo "<li class='pure-menu-item'><a href='";
+                    echo site_url('register');
+                    echo "' class='pure-menu-link'>Register</a></li>";
+
                  ?>
             </ul>
 
