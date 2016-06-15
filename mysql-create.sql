@@ -1,3 +1,7 @@
+	'username' => 'root',
+	'password' => '1234',
+	'database' => 'MyQAs',
+
 CREATETABLE users (
 id int(10) unsigned NOTNULL AUTO_INCREMENT,
 username varchar(16) NOTNULL,
