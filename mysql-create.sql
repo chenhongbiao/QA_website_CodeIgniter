@@ -2,31 +2,34 @@
 	'password' => '1234',
 	'database' => 'MyQAs',
 
-CREATETABLE users (
-id int(10) unsigned NOTNULL AUTO_INCREMENT,
-username varchar(16) NOTNULL,
-password varchar(16) NOTNULL,
-email varchar(200) NOTNULL,
-is_admin int(2) unsigned NOTNULL DEFAULT'0',
-label varchar(16) NOTNULL,
-PRIMARYKEY(id)
+CREATE DATABASE myqas;
+
+CREATE TABLE users (
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+username varchar(16) NOT NULL,
+password varchar(16) NOT NULL,
+email varchar(200) NOT NULL,
+is_admin int(2) unsigned NOT NULL DEFAULT 0,
+label varchar(16) NOT NULL,
+PRIMARY KEY(id)
 );
 
-CREATETABLE questions (
-id int(10) unsigned NOTNULL AUTO_INCREMENT,
-authorId int(10) NOTNULL,
-label varchar(16) NOTNULL,
-title varchar(255) NOTNULL,
-content varchar(1000) NOTNULL,
-PRIMARYKEY(id)
+CREATE TABLE questions (
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+authorId int(10) NOT NULL,
+label varchar(16) NOT NULL,
+title varchar(255) NOT NULL,
+content varchar(1000) NOT NULL,
+created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(id)
 );
 
-CREATETABLE answers (
-id int(10) unsigned NOTNULL AUTO_INCREMENT,
-authorId int(10) NOTNULL,
-questionId int(10) NOTNULL,
-content varchar(1000) NOTNULL,
-PRIMARYKEY(id)
+CREATE TABLE answers (
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+authorId int(10) NOT NULL,
+questionId int(10) NOT NULL,
+content varchar(1000) NOT NULL,
+created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(id)
 );
-
 
